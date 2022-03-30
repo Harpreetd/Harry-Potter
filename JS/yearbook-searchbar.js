@@ -3,7 +3,6 @@ const searchBar = document.querySelector(".searchbar");
 // const searchBtn = document.querySelector(".search-btn");
 let hpCharacters = [];
 
-
 // The searchbar function
 searchBar.addEventListener("keyup", (e) => {
   const searchString = e.target.value.toLowerCase();

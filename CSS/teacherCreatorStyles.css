@@ -1,0 +1,83 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  background-image: url(/images/Harry-Potter-background.jpg);
+  font-family: mr-darcy, sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+/* Header begynner her */
+
+header {
+  left: 0;
+  right: 0;
+  margin: 0;
+  z-index: 99;
+}
+
+.logo {
+  width: 18rem;
+}
+
+.logo:hover {
+  opacity: 60%;
+}
+
+nav ul {
+  margin: 0.6rem;
+  padding: 0;
+  list-style: none;
+}
+
+nav li {
+  display: inline-block;
+  margin: 1em;
+  position: relative;
+}
+
+nav a {
+  text-decoration: none;
+  padding: 0.5em;
+  text-transform: uppercase;
+  color: white;
+  font-size: 1.3rem;
+}
+
+nav a:hover,
+nav a:focus {
+  color: #e0c53b;
+}
+
+nav a::before {
+  content: "";
+  display: block;
+  height: 5px;
+  background-color: #e0c53b;
+
+  position: absolute;
+  top: 0;
+  margin-top: 1.5rem;
+  border-radius: 2px;
+
+  transition: all ease-in-out 250ms;
+}
+
+nav a:hover::before {
+  width: 100%;
+}
+
+@media (min-width: 60rem) {
+  .logo {
+    float: left;
+  }
+
+  nav {
+    float: right;
+  }
+}
