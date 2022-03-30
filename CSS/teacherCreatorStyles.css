@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body {
@@ -80,4 +81,55 @@ nav a:hover::before {
   nav {
     float: right;
   }
+}
+
+/* heading and teachers list */
+
+h1 {
+  padding: 30px;
+  font-size: 3rem;
+  margin: 60px;
+  color: #e0c53b;
+}
+.container {
+  padding: 40px;
+  margin: 0 auto;
+  max-width: 1000px;
+  text-align: center;
+}
+
+.teacher-list {
+  padding-inline-start: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-gap: 20px;
+}
+
+.teacher {
+  list-style-type: none;
+  background-color: #eaeaea;
+  border-radius: 3px;
+  padding: 10px 20px;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-template-areas:
+    "name image"
+    "house image";
+  text-align: left;
+}
+
+.teacher > h2 {
+  grid-area: name;
+  margin-bottom: 0px;
+}
+
+.teacher-house {
+  grid-area: house;
+  margin: 0;
+  margin-top: -18px;
+}
+
+.teacher-image {
+  max-height: 100px;
+  grid-area: image;
 }
