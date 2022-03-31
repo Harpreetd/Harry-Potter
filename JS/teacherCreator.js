@@ -34,19 +34,18 @@ const displayTeacher = (hogwartsStaffList) => {
     if (staffMember.image === "") {
       placeholder = "./images/defaultimage.png";
     }
-    teacherList.innerHTML += `<li class="">
+    let hogwartsHouse = staffMember.house;
+    if (staffMember.house === "") {
+      hogwartsHouse = "Not in a house";
+    }
+    let hogwartsPatronus = staffMember.patronus;
+
+    teacherList.innerHTML += `<li class="teacher">
         <h2>${staffMember.name}</h2>
-        <img src="${placeholder}" class=""/>
+        <p class="teacher-house">House: ${hogwartsHouse}</p>
+        <p class="teacher-patronus">Patronus: ${hogwartsPatronus}</p>
+        <img src="${placeholder}" class="teacher-image"/>
         </li>
         `;
   });
-
-  // const htmlString = staffMembers
-  //   .map((hogwartsStaff) => {
-  //     let placeholder = hogwartsStaff.image;
-  //     if (staffMembers.image === "") {
-  //       placeholder = "./images/defaultimage.png";
-  //     }return `<li class="character">
-  //       <h2>${hogwartsStaff.name}</h2>
-  // teacherList.innerHTML = htmlString;
 };

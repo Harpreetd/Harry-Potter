@@ -87,6 +87,8 @@ nav a:hover::before {
 
 h1 {
   padding: 30px;
+  text-align: center;
+  position: relative;
   font-size: 3rem;
   margin: 60px;
   color: #e0c53b;
@@ -94,11 +96,11 @@ h1 {
 .container {
   padding: 40px;
   margin: 0 auto;
-  max-width: 1000px;
-  text-align: center;
+  width: 100%;
 }
 
 .teacher-list {
+  margin-top: 25px;
   padding-inline-start: 0;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -107,20 +109,32 @@ h1 {
 
 .teacher {
   list-style-type: none;
-  background-color: #eaeaea;
-  border-radius: 3px;
+  background-color: black;
+  color: white;
+  border-radius: 10px;
   padding: 10px 20px;
   display: grid;
   grid-template-columns: 3fr 1fr;
   grid-template-areas:
     "name image"
-    "house image";
+    "house image"
+    "patronus image"
+    "status image";
   text-align: left;
+}
+.teacher {
+  border: 1px solid rgba(68, 83, 147, 0.8);
+  transition: transform 500ms ease-in-out;
+}
+.teacher:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px 5px rgba(68, 83, 147, 0.8),
+    inset 0 0 10px 5px rgba(68, 83, 147, 0.8);
 }
 
 .teacher > h2 {
   grid-area: name;
-  margin-bottom: 0px;
+  margin-bottom: 20px;
 }
 
 .teacher-house {
@@ -128,6 +142,18 @@ h1 {
   margin: 0;
   margin-top: -18px;
 }
+
+.teacher-patronus {
+  grid-area: patronus;
+  margin: 0;
+  margin-top: 3px;
+  display: none;
+}
+
+/*li.teacher:hover + .teacher-patronus {
+  display: block;
+}
+*/
 
 .teacher-image {
   max-height: 100px;
