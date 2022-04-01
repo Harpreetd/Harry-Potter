@@ -3,6 +3,14 @@
   padding: 0;
 }
 
+:root {
+  --primary-clr: #0d0d10;
+  --griffingdor-clr: #ce373d;
+  --slytherin-hoover-button-clr: #377f6a;
+  --huffelpuff-button-clr: #e6a038;
+  --ravenclaw-clr: #445393;
+}
+
 body {
   width: 100%;
   min-height: 100vh;
@@ -92,7 +100,19 @@ h1 {
   position: relative;
   font-size: 3rem;
   margin: 60px;
-  color: #e0c53b;
+  background-image: linear-gradient(
+    to right,
+    #ce373d,
+    #ce373d,
+    #377f6a,
+    #e6a038,
+    #445393,
+    #445393
+  );
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 .container {
   padding: 40px;
@@ -101,10 +121,9 @@ h1 {
 }
 
 .teacher-list {
-  margin-top: 25px;
   padding-inline-start: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   grid-gap: 20px;
 }
 
@@ -115,7 +134,7 @@ h1 {
   border-radius: 10px;
   padding: 10px 20px;
   display: grid;
-  grid-template-columns: 3fr 1fr;
+  grid-template-columns: 4fr 1fr;
   grid-template-areas:
     "name image"
     "house image"
@@ -143,7 +162,7 @@ h1 {
   margin: 0;
   margin-top: -18px;
 }
-/*
+
 .teacher-patronus {
   grid-area: patronus;
   margin: 0;
@@ -151,16 +170,9 @@ h1 {
   visibility: hidden;
 }
 
-.teacher-patronus:hover {
-  visibility: visible;
-}
-/*
-li.teacher:hover + .teacher-patronus {
-  display: block;
-}
-*/
-
 .teacher-image {
-  max-height: 100px;
+  max-height: 150px;
   grid-area: image;
+  display: flex;
+  justify-content: center;
 }

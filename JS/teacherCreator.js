@@ -41,22 +41,22 @@ const displayTeacher = (hogwartsStaffList) => {
     let hogwartsPatronus = staffMember.patronus;
 
     teacherList.innerHTML += `<li class="teacher">
-        <h2>${staffMember.name}</h2>
-        <p class="teacher-house">House: ${hogwartsHouse}</p>
+        <h2>${staffMember.name}</h>
+        <p class="teacher-house">Hose: ${hogwartsHouse}</p>
         <p class="teacher-patronus">Patronus: ${hogwartsPatronus}</p>
         <button id="btn" onclick="deleteTeacher()">Delete teacher</button>
+        <button id="btn" onclick="editTeacher()">Edit teacher</button>
         <img src="${placeholder}" class="teacher-image"/>
         </li>
         `;
   });
+  let teachers = document.body.querySelectorAll(".teacher");
+  for (let teacher of teachers) {
+    teacher.addEventListener("mouseover", function () {
+      this.querySelector(".teacher-patronus").style.visibility = "visible";
+    });
+    teacher.addEventListener("mouseout", function () {
+      this.querySelector(".teacher-patronus").style.visibility = "hidden";
+    });
+  }
 };
-
-/*
-let listItem = document.querySelector(".teacher-patronus");
-listItem.onmouseover = function () {
-  listItem.style.display = "inline";
-};
-listItem.onmouseout = function () {
-  listItem.style.display = "none";
-};
-*/
