@@ -44,7 +44,7 @@ const displayTeacher = (hogwartsStaffList) => {
 
     teacherList.innerHTML += `<li class="teacher">
         <h2>${staffMember.name}</h2>
-        <p class="teacher-house">Hose: ${hogwartsHouse}</p>
+        <p class="teacher-house">House: ${hogwartsHouse}</p>
         <p class="teacher-patronus">Patronus: ${hogwartsPatronus}</p>
         <button id="delete-btn" onclick="deleteTeacher()">Delete teacher</button>
         <button id="edit-btn" onclick="editTeacher()">Edit teacher</button>
