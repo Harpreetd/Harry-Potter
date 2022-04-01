@@ -10,11 +10,16 @@
   --huffelpuff-button-clr: #e6a038;
   --ravenclaw-clr: #445393;
 }
+/* Prøvde og sette inn tryllestav som musepeker med det funka ikke (Passer nok best på side 2) */
+/* html {
+  cursor: url("../images/Wand.png"), auto;
+  height: 100%;
+} */
 
 body {
   width: 100%;
   min-height: 100vh;
-  background-image: url(/images/Harry-Potter-background.jpg);
+  background-image: url(../images/Harry-Potter-background.jpg);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -98,7 +103,7 @@ h1 {
   padding: 30px;
   text-align: center;
   position: relative;
-  font-size: 3rem;
+  font-size: 4rem;
   margin: 60px;
   background-image: linear-gradient(
     to right,
@@ -134,18 +139,18 @@ h1 {
   border-radius: 10px;
   padding: 10px 20px;
   display: grid;
-  grid-template-columns: 4fr 1fr;
+  grid-template-columns: 5fr 1fr;
   grid-template-areas:
     "name image"
     "house image"
     "patronus image"
-    "btn image";
+    "delete-btn image"
+    "edit-btn image";
   text-align: left;
-}
-.teacher {
   border: 1px solid rgba(68, 83, 147, 0.8);
   transition: transform 500ms ease-in-out;
 }
+
 .teacher:hover {
   transform: scale(1.05);
   box-shadow: 0 0 10px 5px rgba(68, 83, 147, 0.8),
@@ -154,13 +159,10 @@ h1 {
 
 .teacher > h2 {
   grid-area: name;
-  margin-bottom: 20px;
 }
 
 .teacher-house {
   grid-area: house;
-  margin: 0;
-  margin-top: -18px;
 }
 
 .teacher-patronus {
@@ -168,6 +170,19 @@ h1 {
   margin: 0;
   margin-top: 3px;
   visibility: hidden;
+  background-image: linear-gradient(
+    to right,
+    #ce373d,
+    #ce373d,
+    #377f6a,
+    #e6a038,
+    #445393,
+    #445393
+  );
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 .teacher-image {
@@ -175,4 +190,36 @@ h1 {
   grid-area: image;
   display: flex;
   justify-content: center;
+}
+
+#delete-btn {
+  border: none;
+  font-family: mr-darcy, sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  width: 200px;
+  border-radius: 8px;
+  background-color: #e6a038;
+  grid-area: delete-btn;
+  margin-bottom: 5px;
+}
+
+#delete-btn:hover {
+  opacity: 60%;
+}
+
+#edit-btn {
+  border: none;
+  font-family: mr-darcy, sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  width: 200px;
+  border-radius: 8px;
+  background-color: #e6a038;
+  grid-area: edit-btn;
+  margin-bottom: 5px;
+}
+
+#edit-btn:hover {
+  opacity: 60%;
 }

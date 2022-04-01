@@ -23,9 +23,11 @@ function renderData(data) {
   return staffMembers;
 }
 
-// Display all staffmembers with name and image
+// Display all staffmembers with name, house and image + delete and edit button
 
 const teacherList = document.querySelector(".teacher-list");
+//const deleteTeacher = document.getElementById("delete-btn");
+//const editTeacher = document.getElementById("edit-btn");
 
 const displayTeacher = (hogwartsStaffList) => {
   console.log(hogwartsStaffList);
@@ -41,15 +43,18 @@ const displayTeacher = (hogwartsStaffList) => {
     let hogwartsPatronus = staffMember.patronus;
 
     teacherList.innerHTML += `<li class="teacher">
-        <h2>${staffMember.name}</h>
+        <h2>${staffMember.name}</h2>
         <p class="teacher-house">Hose: ${hogwartsHouse}</p>
         <p class="teacher-patronus">Patronus: ${hogwartsPatronus}</p>
-        <button id="btn" onclick="deleteTeacher()">Delete teacher</button>
-        <button id="btn" onclick="editTeacher()">Edit teacher</button>
+        <button id="delete-btn" onclick="deleteTeacher()">Delete teacher</button>
+        <button id="edit-btn" onclick="editTeacher()">Edit teacher</button>
         <img src="${placeholder}" class="teacher-image"/>
         </li>
         `;
   });
+
+  // Hover effekt for hidden patronus
+
   let teachers = document.body.querySelectorAll(".teacher");
   for (let teacher of teachers) {
     teacher.addEventListener("mouseover", function () {
@@ -60,3 +65,18 @@ const displayTeacher = (hogwartsStaffList) => {
     });
   }
 };
+
+//trykk på skjerm så flytter tryllestav seg dit, samme funksjon som banan men denne funka ikke, skjønner ikke hvorfor
+
+// const imgWand = document.createElement("img");
+// imgWanda.src = "../images/Wand.png";
+// document.body.appendChild(imgWand);
+
+// document.addEventListener(
+//   "click",
+//   function (ev) {
+//     imgWand.style.transform = "translateY(" + (ev.clientY - 25) + "px)";
+//     imgWand.style.transform += "translateX(" + (ev.clientX - 25) + "px)";
+//   },
+//   false
+// );
