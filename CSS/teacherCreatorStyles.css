@@ -1,13 +1,16 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
 body {
   width: 100%;
   min-height: 100vh;
   background-image: url(/images/Harry-Potter-background.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   font-family: mr-darcy, sans-serif;
   font-weight: 600;
   font-style: normal;
@@ -16,10 +19,8 @@ body {
 /* Header begynner her */
 
 header {
-  left: 0;
-  right: 0;
-  margin: 0;
-  z-index: 99;
+  display: flex;
+  justify-content: space-around;
 }
 
 .logo {
@@ -119,7 +120,7 @@ h1 {
     "name image"
     "house image"
     "patronus image"
-    "status image";
+    "btn image";
   text-align: left;
 }
 .teacher {
@@ -142,15 +143,19 @@ h1 {
   margin: 0;
   margin-top: -18px;
 }
-
+/*
 .teacher-patronus {
   grid-area: patronus;
   margin: 0;
   margin-top: 3px;
-  display: none;
+  visibility: hidden;
 }
 
-/*li.teacher:hover + .teacher-patronus {
+.teacher-patronus:hover {
+  visibility: visible;
+}
+/*
+li.teacher:hover + .teacher-patronus {
   display: block;
 }
 */

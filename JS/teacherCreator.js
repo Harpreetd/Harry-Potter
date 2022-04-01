@@ -44,8 +44,19 @@ const displayTeacher = (hogwartsStaffList) => {
         <h2>${staffMember.name}</h2>
         <p class="teacher-house">House: ${hogwartsHouse}</p>
         <p class="teacher-patronus">Patronus: ${hogwartsPatronus}</p>
+        <button id="btn" onclick="deleteTeacher()">Delete teacher</button>
         <img src="${placeholder}" class="teacher-image"/>
         </li>
         `;
   });
 };
+
+/*
+let listItem = document.querySelector(".teacher-patronus");
+listItem.onmouseover = function () {
+  listItem.style.display = "inline";
+};
+listItem.onmouseout = function () {
+  listItem.style.display = "none";
+};
+*/
