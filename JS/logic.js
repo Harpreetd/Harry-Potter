@@ -1,3 +1,4 @@
+//Declaring en empty array for storing api data
 let hpCharacters = [];
 const loadCharacters = async () => {
   try {
@@ -8,8 +9,10 @@ const loadCharacters = async () => {
     console.error(err);
   }
 };
+// Search-bar function
 const searchBar = document.querySelector(".searchbar");
 let charactersList = document.querySelector(".characters-list");
+
 searchBar.addEventListener("keyup", (e) => {
   let searchString = e.target.value.toLowerCase();
 
@@ -23,6 +26,8 @@ searchBar.addEventListener("keyup", (e) => {
     console.log(filteredCharacters);
   }
 });
+
+// function for displaying characters for both search bar and house names
 const displayCharacters = (hpCharacters) => {
   const htmlString = hpCharacters
     .map((character) => {
@@ -78,6 +83,7 @@ function calculateAge(age) {
 }
 
 loadCharacters();
+// calling the functions on card click to filter and display characters
 
 let gryffindorCard = document.querySelector("#gryffindor-btn");
 gryffindorCard.addEventListener("click", () => {
@@ -100,10 +106,11 @@ ravenclawCard.addEventListener("click", () => {
   flipCard(ravenclawCard);
 });
 
+//function to flip card on-click
 function flipCard(card) {
   card.classList.toggle("flipCard");
 }
-
+//function to filter characters by houses
 function renderData(houseName) {
   houseMembers = hpCharacters.filter(function (data) {
     return data.house == houseName;
