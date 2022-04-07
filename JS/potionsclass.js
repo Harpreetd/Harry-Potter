@@ -110,28 +110,42 @@ let studentName = document.createElement("h2");
 let studentHouse = document.createElement("p");
 let deleteButton = document.createElement("button");
 deleteButton.classList.add("delete-student-btn");
+deleteButton.setAttribute("id", "deletebtn");
 let studentPlaceholder = document.createElement("img");
 studentPlaceholder.classList.add("students-image");
-let randomTen = [];
+// let randomTen = [];
 const getRandomStudents = (students, tenStudents) => {
   for (let i = 0; i < tenStudents; i++) {
-    randomTen.push(students[Math.floor(Math.random() * students.length)]);
-    const infoAboutStudent = randomTen.map((student) => {
-      studentName.innerHTML = student.name,
-      studentHouse.innerHTML = `House: ${student.house}`,
-      deleteButton.innerHTML = "Delete student",
-      studentPlaceholder.src = student.image;
-      if (student.image == "") {
-        studentPlaceholder.src = "./images/default-image.png";
-      }
-      if (student.house == "") {
-        studentHouse.innerHTML = "House: Unknown";
-      }
-      studentContainer.append(studentList);
-      studentInfo.append(studentName, studentHouse, deleteButton);
-      studentList.append(studentInfo, studentPlaceholder);
-    });
-    studentContainer.innerHTML += infoAboutStudent;
+    hpCharacters.push(students[Math.floor(Math.random() * students.length)]);
+    let randomStudents = hpCharacters
+      .map((student) => {
+        (studentName.innerHTML = student.name),
+          (studentHouse.innerHTML = `House: ${student.house}`),
+          (deleteButton.innerHTML = "Delete student");
+        studentPlaceholder.src = student.image;
+        if (student.image == "") {
+          studentPlaceholder.src = "./images/default-image.png";
+        }
+        if (student.house == "") {
+          studentHouse.innerHTML = "House: Unknown";
+        }
+      })
+      .join("");
+    studentContainer.innerHTML += randomStudents;
+
+    // deleteStudent(i, students);
+    let allDeleteBtns = document.querySelectorAll(".delete-student-btn");
+    for (let i = 0; i < allDeleteBtns.length; i++) {
+      allDeleteBtns[i].addEventListener("click", () => {
+        allDeleteBtns[i].style.backgroundColor = "blue";
+        let userAnswer = prompt("Do you want to delete this student? yes/no:");
+        if (userAnswer == "yes") {
+          students.splice(i, 1);
+        } else {
+          alert("You didn't delete this student.");
+        }
+      });
+    }
     let studentCard = document.querySelectorAll(".student-card");
     for (let i = 0; i < studentCard.length; i++) {
       function setBg() {
@@ -140,24 +154,24 @@ const getRandomStudents = (students, tenStudents) => {
       }
       setBg();
     }
+    studentContainer.append(studentList);
+    studentInfo.append(studentName, studentHouse, deleteButton);
+    studentList.append(studentInfo, studentPlaceholder);
   }
 };
+// function deleteStudent(i, students) {
+//   // let userAnswer = prompt("Do you want to delete this character? yes/no");
+//   getRandomStudents(students);
+// }
 
 getCharcters();
-
-deleteButton.addEventListener("mouseover", () => {
-  chatBubbleContainer.style.backgroundColor = "blue";
-});
-
 
 // deleteButton.addEventListener("click", deleteStudent)
 
 // deleteButton.addEventListener(("click", function) (i) => {
-  //   studentCard.splice(i, 1);
-  //   alert("Jeg funker!");
-  //   // getRandomStudents();
+//   studentCard.splice(i, 1);
+//   alert("Jeg funker!");
+//   // getRandomStudents();
 // });
-
-deleteButton.style.backgroundColor = "red";
 
 console.log(deleteButton);
