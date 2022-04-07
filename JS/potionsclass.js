@@ -93,10 +93,10 @@ startBtn.addEventListener("click", () => {
 
 // getStudents();
 
-let students = [];
+// let students = [];
 function getStudents() {
   studentContainer.innerHTML = "";
-  students = hpCharacters.filter(function (data) {
+  let students = hpCharacters.filter(function (data) {
     return data.hogwartsStudent == true;
   });
   getRandomStudents(students, 10);
@@ -112,14 +112,14 @@ let deleteButton = document.createElement("button");
 deleteButton.classList.add("delete-student-btn");
 let studentPlaceholder = document.createElement("img");
 studentPlaceholder.classList.add("students-image");
+let randomTen = [];
 const getRandomStudents = (students, tenStudents) => {
-  let randomTen = [];
   for (let i = 0; i < tenStudents; i++) {
     randomTen.push(students[Math.floor(Math.random() * students.length)]);
     const infoAboutStudent = randomTen.map((student) => {
-      studentName.innerHTML = student.name;
-      studentHouse.innerHTML = `House: ${student.house}`;
-      deleteButton.innerHTML = "Delete student";
+      studentName.innerHTML = student.name,
+      studentHouse.innerHTML = `House: ${student.house}`,
+      deleteButton.innerHTML = "Delete student",
       studentPlaceholder.src = student.image;
       if (student.image == "") {
         studentPlaceholder.src = "./images/default-image.png";
@@ -127,7 +127,6 @@ const getRandomStudents = (students, tenStudents) => {
       if (student.house == "") {
         studentHouse.innerHTML = "House: Unknown";
       }
-
       studentContainer.append(studentList);
       studentInfo.append(studentName, studentHouse, deleteButton);
       studentList.append(studentInfo, studentPlaceholder);
@@ -135,13 +134,30 @@ const getRandomStudents = (students, tenStudents) => {
     studentContainer.innerHTML += infoAboutStudent;
     let studentCard = document.querySelectorAll(".student-card");
     for (let i = 0; i < studentCard.length; i++) {
-      const setBg = () => {
+      function setBg() {
         const randomColor = Math.floor(Math.random() * 16777215).toString(16);
         studentCard[i].style.backgroundColor = "#" + randomColor;
-      };
+      }
       setBg();
     }
   }
-  return randomTen;
 };
+
 getCharcters();
+
+deleteButton.addEventListener("mouseover", () => {
+  chatBubbleContainer.style.backgroundColor = "blue";
+});
+
+
+// deleteButton.addEventListener("click", deleteStudent)
+
+// deleteButton.addEventListener(("click", function) (i) => {
+  //   studentCard.splice(i, 1);
+  //   alert("Jeg funker!");
+  //   // getRandomStudents();
+// });
+
+deleteButton.style.backgroundColor = "red";
+
+console.log(deleteButton);

@@ -211,6 +211,7 @@ main {
   width: 23rem;
   height: 9rem;
   color: white;
+  /* list-style: none; */
 }
 
 .student-info {
