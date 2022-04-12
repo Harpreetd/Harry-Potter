@@ -77,7 +77,6 @@ chatBubbleContainer.classList.add("magicspell-container");
 magicSpell.classList.add("magicspell");
 
 // ******funsjonen som skal starte klassen*******
-
 let studentsContainer = document.querySelector(".students-container");
 studentsContainer.style.display = "none";
 
