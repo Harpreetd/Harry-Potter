@@ -276,10 +276,10 @@ footer {
 
 @media screen and (max-width: 738px) {
   .wrapper {
-    grid-template-columns: 2em 1fr 1fr 1fr 1fr 2em;
+    grid-template-columns: 4em 1fr 1fr 1fr 1fr 4em;
     grid-template-rows: 25% 60% 30% auto 10%;
     grid-template-areas:
-      "header header header header header header "
+      ". header header header header header "
       ". severus severus severus severus bubble"
       ". severus severus severus severus ."
       "main main main main main main"
@@ -360,6 +360,14 @@ footer {
   }
   .logo {
     width: 100px;
+  }
+  .wrapper {
+    grid-template-areas:
+      "header header header header header header "
+      "severus severus severus severus severus bubble"
+      "severus severus severus severus severus severus"
+      "main main main main main main"
+      "footer footer footer footer footer footer";
   }
 }
 @media screen and (max-width: 500px) {
