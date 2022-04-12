@@ -157,32 +157,3 @@ saveStudentBtn.addEventListener("click", () => {
 
   renderData(selectedHouse);
 });
-//trenger ikke denne funksjonen egentlig for vi kan bruke det samme filter funksjonen her i.e renderData()
-// function addNewStudent() {
-//   charactersList.innerHTML = "";
-
-//   filterNewStudent(hpCharacters, "Gryffindor");
-//   filterNewStudent(hpCharacters, "Slytherin");
-//   filterNewStudent(hpCharacters, "Ravenclaw");
-//   filterNewStudent(hpCharacters, "Huffelpuff");
-
-//   function filterNewStudent(array, house) {
-//     let filterStudentArray = array.filter(function (curr) {
-//       displayCharacters(filterStudentArray);
-//       return curr.house === house;
-//     });
-
-//     let placeholder = "./images/defaultimage.png";
-
-//     for (let i = 0; i < filterStudentArray.length; i++) {
-//       charactersList.innerHTML += displayCharacters(filterStudentArray);
-//       `<li class="character">
-//            <h2>${filterStudentArray[i].name}</h2>
-//            <p class="character-status">Status: ${filterStudentArray[i].alive}</p>
-//            <p class="character-age">Age: Uknown</p>
-//            <p class="character-house">House: ${filterStudentArray[i].house}</p>
-//            <img src="${placeholder}" class="character-image" />
-//          </li>`;
-//     }
-//   }
-// }
